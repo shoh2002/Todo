@@ -14,8 +14,8 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             TodoTheme {
-                val navController = rememberNavController() // создаём контроллер
-                NavGraph(navController = navController)     // запускаем граф
+                val navController = rememberNavController()
+                NavGraph(navController = navController)
             }
         }
     }

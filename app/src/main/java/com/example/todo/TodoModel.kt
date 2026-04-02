@@ -35,7 +35,7 @@ fun TodoItem(
     Row(
         modifier = Modifier
             .fillMaxWidth()
-            .clickable { onClick() } // ← и это
+            .clickable { onClick() }
             .padding(horizontal = 16.dp, vertical = 8.dp),
         verticalAlignment = Alignment.CenterVertically,
         horizontalArrangement = Arrangement.SpaceBetween
