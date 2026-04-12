@@ -33,11 +33,7 @@ import androidx.compose.ui.unit.dp
 import com.example.todo.ui.components.TodoItem
 import com.example.todo.ui.viewmodel.TodoViewModel
 
-/**
- * СЛОЙ UI — Jetpack Compose экран
- * Получает состояние из ViewModel через collectAsState()
- * и отправляет события обратно во ViewModel.
- */
+
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun TodoScreen(
@@ -45,7 +41,7 @@ fun TodoScreen(
     modifier: Modifier = Modifier,
     onTaskClick: (String) -> Unit = {}
 ) {
-    // Подписка на StateFlow из ViewModel → состояние обновляется автоматически
+
     val tasks by viewModel.tasks.collectAsState()
 
     var isAddingANewTask by remember { mutableStateOf(false) }
@@ -95,7 +91,6 @@ fun TodoScreen(
                     TodoItem(
                         item = todoModel,
                         onClick = { onTaskClick(todoModel.id) },
-                        // Отправляем события во ViewModel
                         onDelete = { viewModel.deleteTask(todoModel) },
                         onToggle = { viewModel.toggleTask(todoModel) }
                     )

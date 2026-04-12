@@ -15,14 +15,11 @@ object Routes {
     fun todoDetail(taskId: String) = "todo_detail/$taskId"
 }
 
-/**
- * СЛОЙ UI — Навигация
- * ViewModel передаётся в каждый экран как зависимость.
- */
+
 @Composable
 fun NavGraph(
     navController: NavHostController,
-    viewModel: TodoViewModel           // ViewModel живёт в MainActivity
+    viewModel: TodoViewModel
 ) {
     NavHost(
         navController = navController,
